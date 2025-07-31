@@ -44,20 +44,7 @@ It helps users **report lost or found items** and manage their posts efficiently
 git clone https://github.com/YourUsername/LostAndFoundPortal.git
 cd LostAndFoundPortal
 
-2️⃣ Configure Database (MySQL/XAMPP)
-Start XAMPP and enable Apache & MySQL.
 
-Open phpMyAdmin and create a database:
-
-sql
-Copy
-Edit
-CREATE DATABASE lost_and_found;
-Use the following SQL queries to create tables:
-
-sql
-Copy
-Edit
 -- Users Table
 CREATE TABLE users (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -70,27 +57,15 @@ CREATE TABLE users (
 
 -- Items Table
 CREATE TABLE items (
-    item_id INT AUTO_INCREMENT PRIMARY KEY,   -- Unique ID for each item
-    type VARCHAR(50) NOT NULL,                -- "Lost" or "Found"
-    item_name VARCHAR(100) NOT NULL,          -- Name of the item
-    description TEXT NOT NULL,                -- Detailed description
-    location VARCHAR(150) NOT NULL,           -- Where it was lost/found
-    date_reported DATE NOT NULL,              -- Date of report
-    userMail VARCHAR(100) NOT NULL,           -- Logged-in user's email (to link posts)
-    contact_info VARCHAR(150) NOT NULL        -- Contact details (phone/email)
+    item_id INT AUTO_INCREMENT PRIMARY KEY,
+    type VARCHAR(50) NOT NULL,
+    item_name VARCHAR(100) NOT NULL,
+    description TEXT NOT NULL,
+    location VARCHAR(150) NOT NULL,
+    date_reported DATE NOT NULL,
+    userMail VARCHAR(100) NOT NULL,
+    contact_info VARCHAR(150) NOT NULL
 );
-Update your DatabaseConnection.java:
-
-java
-Copy
-Edit
-private static final String URL = "jdbc:mysql://localhost:3306/lost_and_found";
-private static final String USER = "root";
-private static final String PASSWORD = "";
-3️⃣ Run the Application
-Open project in NetBeans or VS Code
-
-Run Main.java
 
 🎉 Enjoy your Lost & Found Portal!
 
