@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane prefHeight="640.0" prefWidth="340.0"
+            style="-fx-background-color: linear-gradient(to bottom, #1a1a2c, #262642); -fx-padding: 20;"
+            xmlns="http://javafx.com/javafx/20.0.1"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controller.MyPostsController">
+
+    <top>
+        <VBox spacing="10">
+            <HBox alignment="CENTER_LEFT" spacing="10">
+                <Label style="-fx-font-size: 22px; -fx-text-fill: white;" text="📂 My Posts"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Button fx:id="backButton"
+                        style="-fx-background-color: #42a5f5; -fx-text-fill: white;"
+                        text="⬅ Back to Home"/>
+            </HBox>
+
+            <HBox alignment="CENTER_RIGHT">
+                <Button fx:id="newPostButton"
+                        style="-fx-background-color: #66bb6a; -fx-text-fill: white;"
+                        text="➕ New Post"/>
+            </HBox>
+        </VBox>
+    </top>
+
+    <center>
+        <ListView fx:id="myPostListView"
+                  prefHeight="400.0"
+                  prefWidth="300.0"
+                  style="-fx-background-color: #303046; -fx-text-fill: white;"/>
+    </center>
+
+    <bottom>
+        <HBox alignment="CENTER" spacing="10" style="-fx-padding: 10;">
+            <Button fx:id="editButton"
+                    disable="true"
+                    style="-fx-background-color: #ffa726; -fx-text-fill: white;"
+                    text="✏️ Edit"/>
+            <Button fx:id="deleteButton"
+                    disable="true"
+                    style="-fx-background-color: #ef5350; -fx-text-fill: white;"
+                    text="🗑 Delete"/>
+        </HBox>
+    </bottom>
+</BorderPane>

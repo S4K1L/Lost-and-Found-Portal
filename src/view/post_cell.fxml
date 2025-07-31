@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+
+<StackPane prefHeight="160.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+    <HBox fx:id="root" prefHeight="160.0" prefWidth="300.0" spacing="12" style="-fx-background-color: linear-gradient(to bottom right, #2a2a3d, #1e1e2f);                  -fx-padding: 15;                  -fx-background-radius: 15;                  -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.4), 12, 0, 0, 4);                  -fx-cursor: hand;">
+
+        <!-- User Profile Picture -->
+        <ImageView fx:id="profileImage" fitHeight="40" fitWidth="40"
+                   style="-fx-background-radius: 20; -fx-clip: true;" />
+
+        <!-- Post Content Section -->
+        <VBox prefWidth="220" spacing="6">
+            <!-- Type & Time -->
+            <HBox alignment="CENTER_LEFT" spacing="8">
+                <Label fx:id="type" style="-fx-font-size: 14px; -fx-text-fill: white; -fx-font-weight: bold;" />
+                <Label fx:id="timeLabel" style="-fx-font-size: 11px; -fx-text-fill: #b0b0b0;" />
+            </HBox>
+
+            <!-- Username -->
+            <Label fx:id="usernameLabel" maxWidth="220" style="-fx-font-size: 13px; -fx-text-fill: #f5f5f5; -fx-font-weight: bold;" wrapText="true" />
+
+            <!-- Description -->
+            <Label fx:id="contentLabel" maxWidth="220" style="-fx-font-size: 12px; -fx-text-fill: #dcdcdc;" wrapText="true" />
+
+            <!-- Contact Info -->
+            <Label fx:id="contactLabel" maxWidth="220" style="-fx-font-size: 12px; -fx-text-fill: #4fc3f7; -fx-font-style: italic;" wrapText="true" />
+        </VBox>
+    </HBox>
+</StackPane>

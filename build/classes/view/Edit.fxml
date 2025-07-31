@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefHeight="640.0" prefWidth="340.0" style="-fx-background-color: linear-gradient(to bottom, #1a1a2c, #262642); -fx-padding: 20;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.EditController">
+
+    <top>
+        <VBox alignment="CENTER" spacing="10">
+            <Label style="-fx-font-size: 24px; -fx-text-fill: white; -fx-font-weight: bold;" text="✏️ Edit Post" />
+        </VBox>
+    </top>
+
+    <center>
+        <VBox alignment="CENTER" spacing="15" style="-fx-padding: 20;">
+            <ComboBox fx:id="typeComboBox" promptText="Select Type" style="-fx-background-color: white; -fx-text-fill: white;" />
+            <TextField fx:id="nameField" promptText="Item Name" style="-fx-background-color: #3b3b55; -fx-text-fill: white;" />
+            <TextField fx:id="locationField" promptText="Location" style="-fx-background-color: #3b3b55; -fx-text-fill: white;" />
+            <DatePicker fx:id="datePicker" promptText="Select Date" style="-fx-background-color: #3b3b55; -fx-text-fill: white;" />
+            <TextArea fx:id="descriptionArea" promptText="Description" style="-fx-background-color: #3b3b55; -fx-text-fill: grey;" wrapText="true" />
+            <TextField fx:id="contactField" promptText="Contact Info" style="-fx-background-color: #3b3b55; -fx-text-fill: white;" />
+        </VBox>
+    </center>
+
+    <bottom>
+        <HBox alignment="CENTER" spacing="10">
+            <Button fx:id="updateButton" style="-fx-background-color: #5c6bc0; -fx-text-fill: white; -fx-font-weight: bold;" text="💾 Update" />
+            <Button fx:id="cancelButton" style="-fx-background-color: #888; -fx-text-fill: white;" text="❌ Cancel" />
+        </HBox>
+    </bottom>
+</BorderPane>

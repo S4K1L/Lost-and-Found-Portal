@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefHeight="640.0" prefWidth="374.0" style="-fx-background-color: linear-gradient(to bottom, #1c1c2e, #2a2a42); -fx-padding: 20;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.HomeController">
+
+    <!-- Top Navigation Bar -->
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="12" style="-fx-padding: 10;">
+            <Label style="-fx-font-size: 22px; -fx-text-fill: white; -fx-font-weight: bold;" text="🏠 Home" />
+            <Region HBox.hgrow="ALWAYS" />
+            <Button fx:id="myPostsButton" style="-fx-background-color: #42a5f5; -fx-text-fill: white;" text="My Posts" />
+            <Button fx:id="profileButton" style="-fx-background-color: #26c6da; -fx-text-fill: white;" text="Profile" />
+            <Button fx:id="logoutButton" style="-fx-background-color: #ef5350; -fx-text-fill: white;" text="Logout" />
+        </HBox>
+    </top>
+
+    <!-- Center List View (Posts) -->
+    <center>
+        <VBox spacing="10">
+            <Label style="-fx-font-size: 18px; -fx-text-fill: white;" text="📋 Lost &amp; Found Posts" />
+            <ListView fx:id="postListView" prefHeight="500" style="-fx-background-color: transparent; -fx-control-inner-background: transparent;" />
+        </VBox>
+    </center>
+</BorderPane>
