@@ -41,7 +41,17 @@ public class CreateController {
             return;
         }
 
-        try (Connection conn = DatabaseConnection.getConnection()) {
+        try {
+            Connection conn = DatabaseConnection.getConnection();
+
+            if (conn == null || conn.isClosed()) {
+                System.out.println("Database not found. Creating database and table...");
+                createDatabaseAndTable();
+                conn = DatabaseConnection.getConnection(); // reconnect after creation
+            }
+
+            createItemsTableIfNotExists(conn);
+
             String query = "INSERT INTO items (type, item_name, location, date_reported, description, contact_info, userMail) VALUES (?, ?, ?, ?, ?, ?, ?)";
             PreparedStatement stmt = conn.prepareStatement(query);
             stmt.setString(1, type);
@@ -60,6 +70,41 @@ public class CreateController {
         } catch (SQLException e) {
             e.printStackTrace();
             showAlert(Alert.AlertType.ERROR, "Database Error", "Could not save the post.");
+        }
+    }
+
+    private void createDatabaseAndTable() {
+        String dbName = "lost_and_found"; // your DB name
+        String serverUrl = "jdbc:mysql://localhost:3306/";
+        String user = "root";
+        String pass = ""; // your MySQL password
+
+        try (Connection conn = DriverManager.getConnection(serverUrl, user, pass);
+             Statement stmt = conn.createStatement()) {
+
+            stmt.executeUpdate("CREATE DATABASE IF NOT EXISTS " + dbName);
+            System.out.println("Database created or already exists.");
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void createItemsTableIfNotExists(Connection conn) {
+        try (Statement stmt = conn.createStatement()) {
+            stmt.executeUpdate("CREATE TABLE IF NOT EXISTS items (" +
+                    "item_id INT PRIMARY KEY AUTO_INCREMENT," +
+                    "type VARCHAR(20) NOT NULL," +
+                    "item_name VARCHAR(255) NOT NULL," +
+                    "location VARCHAR(255) NOT NULL," +
+                    "date_reported DATE NOT NULL," +
+                    "description TEXT NOT NULL," +
+                    "contact_info VARCHAR(255) NOT NULL," +
+                    "userMail VARCHAR(255) NOT NULL" +
+                    ")");
+            System.out.println("Items table created or already exists.");
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
     }
 

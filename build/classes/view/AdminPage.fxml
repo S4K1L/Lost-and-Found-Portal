@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane prefHeight="640.0" prefWidth="340.0"
+            style="-fx-background-color: linear-gradient(to bottom, #1a1a2c, #262642); -fx-padding: 20;"
+            xmlns="http://javafx.com/javafx/20.0.1"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controller.AdminController">
+
+    <!-- Top Section -->
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="10">
+            <Label style="-fx-font-size: 22px; -fx-text-fill: white;" text="📋 All Posts"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button fx:id="logoutButton"
+                    style="-fx-background-color: #ef5350; -fx-text-fill: white;"
+                    text="🚪 Logout"/>
+        </HBox>
+    </top>
+
+    <!-- Center Section -->
+    <center>
+        <ListView fx:id="postListView"
+                  prefHeight="400.0"
+                  prefWidth="300.0"
+                  style="-fx-background-color: #303046; -fx-text-fill: white;"/>
+    </center>
+
+    <!-- Bottom Section -->
+    <bottom>
+        <HBox alignment="CENTER" spacing="10" style="-fx-padding: 10;">
+            <Button fx:id="deleteButton"
+                    disable="true"
+                    style="-fx-background-color: #ef5350; -fx-text-fill: white;"
+                    text="🗑 Delete"/>
+        </HBox>
+    </bottom>
+
+</BorderPane>

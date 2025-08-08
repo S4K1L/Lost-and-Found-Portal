@@ -3,11 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/SiRUSsir/Documents/NetBeansProjects/LostAndFoundPortal/src/view/Login.fxml</file>
             <file>file:/C:/Users/SiRUSsir/Documents/NetBeansProjects/LostAndFoundPortal/src/controller/MyPostsController.java</file>
-            <file>file:/C:/Users/SiRUSsir/Documents/NetBeansProjects/LostAndFoundPortal/src/view/Signup.fxml</file>
+            <file>file:/C:/Users/SiRUSsir/Documents/NetBeansProjects/LostAndFoundPortal/src/controller/LoginController.java</file>
             <file>file:/C:/Users/SiRUSsir/Documents/NetBeansProjects/LostAndFoundPortal/src/Main.java</file>
-            <file>file:/C:/Users/SiRUSsir/Documents/NetBeansProjects/LostAndFoundPortal/src/controller/SignupController.java</file>
             <file>file:/C:/Users/SiRUSsir/Documents/NetBeansProjects/LostAndFoundPortal/src/view/MyPosts.fxml</file>
         </group>
     </open-files>
